@@ -31,14 +31,9 @@ class _TeachersState extends State<Teachers> {
 
   @override
   void initState() {
-    _teachers = _found;
     super.initState();
-
     _getAllData();
     // Loading the diary when the app starts
-
-    print("Found is ===");
-    print(_teachers.length);
   }
 
   // This function is called whenever the text field changes
@@ -46,7 +41,7 @@ class _TeachersState extends State<Teachers> {
     List<Map<String, dynamic>> results = [];
     if (enteredKeyword.isEmpty) {
       // if the search field is empty or only contains white-space, we'll display all users
-      _getAllData();
+      //_getAllData();
       results = _teachers;
     } else {
       results = _teachers
@@ -58,7 +53,6 @@ class _TeachersState extends State<Teachers> {
 
     setState(() {
       _found = results;
-      print("Yaa Huuuu");
     });
   }
 
